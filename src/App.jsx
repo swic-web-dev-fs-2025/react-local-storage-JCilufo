@@ -1,9 +1,6 @@
 import { useLocalStorage } from "@uidotdev/usehooks"
 
 import "./App.css";
-import reactLogo from "./assets/react.svg";
-
-import viteLogo from "/vite.svg";
 
 export default function App() {
   const [todos, setTodos] = useLocalStorage("todos", []); // Tracks todo list
@@ -36,16 +33,14 @@ export default function App() {
             setInput(""); // Clears textbox
           }}>
         Add Todo
-        </button>
+      </button>
       <ul>
         {todos.map((todo) => ( // Iterate over the todos array
           <li key={todo.id}>{todo.text}</li> // Display each todo as a list item
         ))}
       </ul>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button onClick={() => setTodos([])}>Clear Todos</button> {/* Button to clear all todos */}
+    </div>
     </>
   );
 }
