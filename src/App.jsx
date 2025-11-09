@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLocalStorage } from "@uidotdev/usehooks"
 
 import "./App.css";
 import reactLogo from "./assets/react.svg";
