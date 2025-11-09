@@ -10,6 +10,11 @@ export default function App() {
   const [input, setInput] = useLocalStorage("todoInput", ""); // Tracks textbox input value
 
 
+  const addTodo = (text) => {
+    const trimmed = (text || "").trim(); // Trim removes any whitespace. This will prevent adding empty todos
+    if (!trimmed) return; // Return early if trimmed text is empty
+    setTodos([...todos, { id: Date.now(), text: trimmed }]) // Date.now generates a unique id based on the current timestamp
+  }
 
   return (
     <>
