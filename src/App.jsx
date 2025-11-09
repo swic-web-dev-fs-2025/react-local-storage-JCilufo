@@ -31,6 +31,11 @@ export default function App() {
         }}
         placeholder="Add a todo..."
       />
+      <button onClick={() => {
+            addTodo(input); // Adds input value to list when button is clicked
+            setInput(""); // Clears textbox
+          }}>
+        Add Todo
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
