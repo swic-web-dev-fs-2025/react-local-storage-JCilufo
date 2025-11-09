@@ -37,9 +37,11 @@ export default function App() {
           }}>
         Add Todo
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <ul>
+        {todos.map((todo) => ( // Iterate over the todos array
+          <li key={todo.id}>{todo.text}</li> // Display each todo as a list item
+        ))}
+      </ul>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
