@@ -19,21 +19,18 @@ export default function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button
-          onClick={() => {
-            setCount((prevCount) => prevCount + 1);
-          }}
-        >
-          count is {count}
+      <h1>Todos</h1>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") { // Check that Enter key is pressed
+            addTodo(input); // Adds input value to list when Enter key is pressed
+            setInput(""); // Clears textbox
+          }
+        }}
+        placeholder="Add a todo..."
+      />
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
