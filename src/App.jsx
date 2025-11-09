@@ -6,8 +6,10 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
 export default function App() {
-  // Array destructuring assignment
-  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useLocalStorage("todos", []); // Tracks todo list
+  const [input, setInput] = useLocalStorage("todoInput", ""); // Tracks textbox input value
+
+
 
   return (
     <>
